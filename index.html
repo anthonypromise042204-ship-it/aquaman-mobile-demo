@@ -1,672 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AquaMan Mobile Mechanic | Houston, TX</title>
-
-  <meta name="description"
-        content="Professional mobile mechanic service in Houston, Texas. Auto diagnostics, repairs, maintenance and car programming.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080b10;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .topbar {
-      background: #111720;
-      text-align: center;
-      padding: 10px 15px;
-      font-size: 14px;
-      color: #d9e1ea;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 11, 16, 0.96);
-      border-bottom: 1px solid #222a35;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: #4da3ff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #d9e1ea;
-      font-size: 15px;
-    }
-
-    .nav-links a:hover {
-      color: #4da3ff;
-    }
-
-    .nav-call {
-      background: #4da3ff;
-      color: #07101a !important;
-      padding: 10px 17px;
-      border-radius: 8px;
-      font-weight: 700;
-    }
-
-    .hero {
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(8,11,16,.98), rgba(8,11,16,.82), rgba(8,11,16,.45)),
-        radial-gradient(circle at 80% 30%, #17395c, transparent 35%);
-    }
-
-    .hero-content {
-      max-width: 1150px;
-      width: 100%;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 7px 13px;
-      border: 1px solid #31506d;
-      border-radius: 30px;
-      color: #8ec8ff;
-      font-size: 13px;
-      margin-bottom: 22px;
-      background: rgba(20, 42, 63, .5);
-    }
-
-    h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.05;
-      max-width: 800px;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      color: #4da3ff;
-    }
-
-    .hero-text {
-      max-width: 650px;
-      color: #b9c3cf;
-      font-size: 19px;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 24px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .btn-primary {
-      background: #4da3ff;
-      color: #06101a;
-    }
-
-    .btn-secondary {
-      border: 1px solid #526171;
-      color: white;
-      background: #111720;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 85px 20px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #9da8b5;
-      max-width: 650px;
-      margin: auto;
-    }
-
-    .services {
-      background: #0d1219;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .service-card {
-      background: #111720;
-      border: 1px solid #222d3a;
-      border-radius: 14px;
-      padding: 28px;
-      transition: .2s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: #4da3ff;
-    }
-
-    .service-icon {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 8px;
-      font-size: 20px;
-    }
-
-    .service-card p {
-      color: #9da8b5;
-      font-size: 15px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .why-box {
-      background: #111720;
-      border: 1px solid #222d3a;
-      border-radius: 15px;
-      padding: 35px;
-    }
-
-    .why-box h3 {
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .check {
-      display: flex;
-      gap: 12px;
-      margin: 16px 0;
-      color: #d8e0e9;
-    }
-
-    .check b {
-      color: #4da3ff;
-    }
-
-    .rating {
-      text-align: center;
-      background: #101923;
-      border: 1px solid #263647;
-      border-radius: 15px;
-      padding: 45px 25px;
-    }
-
-    .rating-number {
-      font-size: 60px;
-      font-weight: 800;
-    }
-
-    .stars {
-      font-size: 25px;
-      margin: 5px 0;
-    }
-
-    .rating p {
-      color: #aab5c1;
-    }
-
-    .cta {
-      background:
-        radial-gradient(circle at center, #153b61, #080b10 65%);
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      color: #b8c4d0;
-      max-width: 650px;
-      margin: 0 auto 30px;
-    }
-
-    .contact {
-      background: #0d1219;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .contact-card {
-      background: #111720;
-      border: 1px solid #222d3a;
-      border-radius: 14px;
-      padding: 28px;
-      text-align: center;
-    }
-
-    .contact-card .icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .contact-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .contact-card p {
-      color: #aab5c1;
-      font-size: 14px;
-    }
-
-    footer {
-      padding: 30px 20px;
-      text-align: center;
-      background: #07090d;
-      border-top: 1px solid #1c2530;
-      color: #778391;
-      font-size: 13px;
-    }
-
-    .demo-note {
-      background: #151b23;
-      padding: 10px;
-      text-align: center;
-      color: #8d99a6;
-      font-size: 12px;
-    }
-
-    @media (max-width: 800px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .service-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 18px;
-      }
-
-      .cta h2 {
-        font-size: 34px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AquaMan Mobile Mechanic | Houston, TX</title>
+
+<meta name="description" content="AquaMan Mobile Mechanic provides convenient mobile automotive service in Houston, Texas.">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#070b11;
+  color:#fff;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.demo{
+  background:#17202b;
+  color:#9fb0c2;
+  text-align:center;
+  padding:8px 12px;
+  font-size:12px;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(7,11,17,.96);
+  border-bottom:1px solid #202b38;
+}
+
+.nav{
+  max-width:1150px;
+  margin:auto;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#4da3ff;
+}
+
+.navlinks{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.navlinks a{
+  color:#c7d0da;
+  font-size:14px;
+}
+
+.navlinks a:hover{
+  color:#4da3ff;
+}
+
+.calltop{
+  background:#4da3ff;
+  color:#07101a !important;
+  padding:10px 17px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.hero{
+  min-height:700px;
+  display:flex;
+  align-items:center;
+  background:
+  radial-gradient(circle at 85% 35%,#164a7a 0%,transparent 34%),
+  linear-gradient(120deg,#070b11 30%,#0b1725 100%);
+}
+
+.hero-inner{
+  width:100%;
+  max-width:1150px;
+  margin:auto;
+  padding:90px 20px;
+}
+
+.badge{
+  display:inline-block;
+  border:1px solid #315b7e;
+  background:#0d1d2d;
+  color:#8bc7ff;
+  padding:8px 15px;
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:24px;
+}
+
+h1{
+  max-width:800px;
+  font-size:clamp(45px,8vw,78px);
+  line-height:1.02;
+  margin-bottom:25px;
+}
+
+h1 span{
+  color:#4da3ff;
+}
+
+.hero p{
+  max-width:650px;
+  color:#b6c1cd;
+  font-size:19px;
+  margin-bottom:35px;
+}
+
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 24px;
+  border-radius:9px;
+  font-weight:bold;
+  display:inline-block;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:#4da3ff;
+  color:#06101a;
+}
+
+.secondary{
+  border:1px solid #526171;
+  background:#111923;
+}
+
+section{
+  padding:85px 20px;
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.title h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.title p{
+  color:#9ca9b7;
+  max-width:650px;
+  margin:auto;
+}
+
+.trust{
+  background:#0d141d;
+}
+
+.trustgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.trustbox{
+  text-align:center;
+  padding:30px;
+  border:1px solid #263544;
+  border-radius:14px;
+  background:#111a24;
+}
+
+.trustbox strong{
+  display:block;
+  font-size:42px;
+  color:#4da3ff;
+}
+
+.trustbox span{
+  color:#aab6c2;
+}
+
+.services{
+  background:#080d14;
+}
+
+.servicegrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:#111923;
+  border:1px solid #243140;
+  border-radius:14px;
+  padding:28px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#4da3ff;
+}
+
+.icon{
+  font-size:32px;
+  margin-bottom:14px;
+}
+
+.card h3{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#9daab7;
+  font-size:15px;
+}
+
+.about{
+  background:#0d141d;
+}
+
+.aboutgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.aboutbox{
+  background:#111923;
+  border:1px solid #263544;
+  border-radius:15px;
+  padding:35px;
+}
+
+.aboutbox h3{
+  font-size:27px;
+  margin-bottom:20px;
+}
+
+.aboutbox p{
+  color:#aeb9c5;
+  margin-bottom:18px;
+}
+
+.check{
+  margin:14px 0;
+  color:#d9e2eb;
+}
+
+.check b{
+  color:#4da3ff;
+  margin-right:10px;
+}
+
+.area{
+  background:#080d14;
+  text-align:center;
+}
+
+.area-box{
+  max-width:850px;
+  margin:auto;
+  background:linear-gradient(135deg,#101c29,#0c131c);
+  border:1px solid #294157;
+  border-radius:18px;
+  padding:50px 25px;
+}
+
+.area-box .big{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.area-box h2{
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+.area-box p{
+  color:#aeb9c5;
+}
+
+.cta{
+  text-align:center;
+  background:
+  radial-gradient(circle at center,#153f67,transparent 65%),
+  #070b11;
+}
+
+.cta h2{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 30px;
+  color:#b6c1cd;
+}
+
+.contact{
+  background:#0d141d;
+}
+
+.contactgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.contactbox{
+  background:#111923;
+  border:1px solid #263544;
+  border-radius:14px;
+  padding:28px;
+  text-align:center;
+}
+
+.contactbox .icon{
+  font-size:30px;
+}
+
+.contactbox h3{
+  margin-bottom:5px;
+}
+
+.contactbox p{
+  color:#aab6c2;
+}
+
+footer{
+  text-align:center;
+  padding:30px 20px 90px;
+  background:#06090d;
+  color:#71808f;
+  font-size:13px;
+}
+
+.mobilebar{
+  display:none;
+}
+
+@media(max-width:800px){
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    min-height:650px;
+  }
+
+  .hero-inner{
+    padding:75px 20px;
+  }
+
+  h1{
+    font-size:50px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .trustgrid,
+  .servicegrid,
+  .contactgrid,
+  .aboutgrid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:65px 18px;
+  }
+
+  .title h2{
+    font-size:34px;
+  }
+
+  .cta h2{
+    font-size:35px;
+  }
+
+  .mobilebar{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:2000;
+    background:#0c141d;
+    border-top:1px solid #273544;
+  }
+
+  .mobilebar a{
+    width:50%;
+    padding:16px;
+    text-align:center;
+    font-weight:bold;
+  }
+
+  .mobilecall{
+    background:#4da3ff;
+    color:#06101a;
+  }
+
+  .mobiletext{
+    background:#111923;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="demo-note">
-    WEBSITE DEMO — Prepared as a sample concept for AquaMan Mobile Mechanic
+<div class="demo">
+  WEBSITE DEMO • SAMPLE CONCEPT FOR AQUAMAN MOBILE MECHANIC
+</div>
+
+<header>
+  <nav class="nav">
+
+    <div class="logo">
+      AQUA<span>MAN</span>
+    </div>
+
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#about">Why Us</a>
+      <a href="#contact">Contact</a>
+
+      <a class="calltop" href="tel:+18327747884">
+        Call Now
+      </a>
+    </div>
+
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="badge">
+      MOBILE AUTO SERVICE • HOUSTON, TEXAS
+    </div>
+
+    <h1>
+      Your Mechanic.
+      <span>Wherever You Are.</span>
+    </h1>
+
+    <p>
+      Convenient mobile automotive service brought directly
+      to your location in the Houston area.
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn primary" href="tel:+18327747884">
+        📞 Call for Service
+      </a>
+
+      <a class="btn secondary" href="#services">
+        View Services
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="topbar">
-    📍 Serving Houston, Texas &nbsp; | &nbsp; 📞 Mobile Service
-  </div>
+</section>
 
-  <header>
-    <nav class="nav">
+<section class="trust">
 
-      <div class="logo">
-        AQUA<span>MAN</span>
-      </div>
+  <div class="container">
 
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#about">Why Us</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-call" href="tel:+18327747884">
-          Call Now
-        </a>
-      </div>
+    <div class="trustgrid">
 
-    </nav>
-  </header>
-
-  <main>
-
-    <section class="hero">
-
-      <div class="hero-content">
-
-        <div class="badge">
-          MOBILE AUTO SERVICE • HOUSTON, TX
-        </div>
-
-        <h1>
-          Your Mechanic.<br>
-          <span>Wherever You Are.</span>
-        </h1>
-
-        <p class="hero-text">
-          Professional mobile automotive service designed to bring
-          convenient vehicle repair and diagnostics directly to you.
-        </p>
-
-        <div class="buttons">
-
-          <a class="btn btn-primary"
-             href="tel:+18327747884">
-            📞 Call for Service
-          </a>
-
-          <a class="btn btn-secondary"
-             href="#services">
-            View Services
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="services" id="services">
-
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Services</h2>
-          <p>
-            Mobile automotive services designed to help keep your
-            vehicle running properly.
-          </p>
-        </div>
-
-        <div class="service-grid">
-
-          <div class="service-card">
-            <div class="service-icon">🔧</div>
-            <h3>Auto Repair</h3>
-            <p>
-              Convenient mobile vehicle repair and maintenance
-              services at your location.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">🔍</div>
-            <h3>Diagnostics</h3>
-            <p>
-              Vehicle diagnostic services to help identify
-              automotive problems.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Car Programming</h3>
-            <p>
-              Automotive programming and electronic vehicle
-              service.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">🔋</div>
-            <h3>Battery Service</h3>
-            <p>
-              Mobile battery-related assistance for customers
-              who need help where they are.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3>Electrical Service</h3>
-            <p>
-              Mobile assistance for vehicle electrical issues
-              and related problems.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">🚗</div>
-            <h3>Maintenance</h3>
-            <p>
-              Convenient automotive maintenance and service
-              support.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section id="about">
-
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Why Choose Mobile Service?</h2>
-          <p>
-            Skip the inconvenience of taking your vehicle to a shop.
-          </p>
-        </div>
-
-        <div class="why-grid">
-
-          <div class="why-box">
-
-            <h3>Service That Comes To You</h3>
-
-            <div class="check">
-              <b>✓</b>
-              <span>Convenient mobile service</span>
-            </div>
-
-            <div class="check">
-              <b>✓</b>
-              <span>Professional automotive assistance</span>
-            </div>
-
-            <div class="check">
-              <b>✓</b>
-              <span>Diagnostic and repair services</span>
-            </div>
-
-            <div class="check">
-              <b>✓</b>
-              <span>Houston-area service</span>
-            </div>
-
-          </div>
-
-          <div class="rating">
-
-            <div class="rating-number">
-              4.9
-            </div>
-
-            <div class="stars">
-              ★★★★★
-            </div>
-
-            <p>
-              Customer rating displayed on the public business listing
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="cta">
-
-      <div class="container">
-
-        <h2>Need A Mechanic?</h2>
-
-        <p>
-          Get convenient mobile automotive service in Houston.
-          Contact AquaMan to discuss your vehicle's needs.
-        </p>
-
-        <a class="btn btn-primary"
-           href="tel:+18327747884">
-          📞 Contact AquaMan
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <section class="contact" id="contact">
-
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Get In Touch</h2>
-          <p>
-            Contact the team to discuss your vehicle service needs.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-
-          <a class="contact-card"
-             href="tel:+18327747884">
-
-            <div class="icon">📞</div>
-
-            <h3>Call</h3>
-
-            <p>
-              (832) 774-7884
-            </p>
-
-          </a>
-
-
-          <div class="contact-card">
-
-            <div class="icon">📍</div>
-
-            <h3>Location</h3>
-
-            <p>
-              Houston, Texas
-            </p>
-
-          </div>
-
-
-          <div class="contact-card">
-
-            <div class="icon">🔧</div>
-
-            <h3>Service</h3>
-
-            <p>
-              Mobile Automotive Service
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer>
-
-    © 2026 AquaMan Mobile Mechanic — Website Demo
-
-  </footer>
-
-</body>
-</html>
+      <div class="trustbox">
+        <strong>4.9★</
